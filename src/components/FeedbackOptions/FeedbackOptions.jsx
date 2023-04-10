@@ -1,5 +1,6 @@
+import css from './FeedbackOptions.module.css';
 export const FeedbackOptions = ({ onLeaveFeedback = {} }) => (
-  <ul>
+  <ul className={css.FeedbackOptions}>
     <li>
       <button type="button" data-value="good" onClick={onLeaveFeedback}>
         Good
