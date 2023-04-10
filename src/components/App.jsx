@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Statistics } from './Statistics/Statistics';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import { Section } from './Section/Section';
 
 class App extends Component {
   state = {
@@ -39,59 +42,16 @@ class App extends Component {
 
   render() {
     return (
-      <>
-        <h1>Please leave feedback</h1>
-        <ul>
-          <li>
-            <button
-              type="button"
-              data-value="good"
-              onClick={this.handleFeedback}
-            >
-              Good
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              data-value="neutral"
-              onClick={this.handleFeedback}
-            >
-              Neutral
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              data-value="bad"
-              onClick={this.handleFeedback}
-            >
-              Bad
-            </button>
-          </li>
-        </ul>
-        <div>
-          <h2>Statistics</h2>
-          <ul>
-            <li>
-              Good: <span>{this.state.good}</span>
-            </li>
-            <li>
-              Neutral: <span>{this.state.neutral}</span>
-            </li>
-            <li>
-              Bad: <span>{this.state.bad}</span>
-            </li>
-            <li>
-              Total: <span>{this.countTotalFeedback()}</span>
-            </li>
-            <li>
-              Positive feedback:{' '}
-              <span>{this.countPositiveFeedbackPercentage()}</span>%
-            </li>
-          </ul>
-        </div>
-      </>
+      <Section title="Please leave feedback">
+        <FeedbackOptions onLeaveFeedback={this.handleFeedback} />
+        <Statistics
+          good={this.state.good}
+          neutral={this.state.neutral}
+          bad={this.state.bad}
+          total={this.countTotalFeedback()}
+          positivePercentage={this.countPositiveFeedbackPercentage()}
+        />
+      </Section>
     );
   }
 }
