@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
 export const FeedbackOptions = ({ onLeaveFeedback = {} }) => (
   <ul className={css.FeedbackOptions}>
@@ -18,3 +19,5 @@ export const FeedbackOptions = ({ onLeaveFeedback = {} }) => (
     </li>
   </ul>
 );
+
+FeedbackOptions.propTypes = { onLeaveFeedback: PropTypes.func.isRequired };
