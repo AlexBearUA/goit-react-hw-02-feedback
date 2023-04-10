@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import css from 'components/FeedbackWidget/FeedbackWidget.module.css';
+// import PropTypes from 'prop-types';
+// import css from 'components/FeedbackWidget/FeedbackWidget.module.css';
 
 class FeedbackWidget extends Component {
   state = {
@@ -23,11 +23,10 @@ class FeedbackWidget extends Component {
         }));
         break;
 
-      case 'neutral':
+      default:
         this.setState(prevState => ({
           neutral: prevState.neutral + 1,
         }));
-        break;
     }
   };
 
