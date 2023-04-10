@@ -6,7 +6,6 @@ export const Statistics = ({
   positivePercentage = {},
 }) => (
   <>
-    <h2>Statistics</h2>
     <ul>
       <li>
         Good: <span>{good}</span>
