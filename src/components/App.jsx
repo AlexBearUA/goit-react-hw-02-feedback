@@ -44,14 +44,12 @@ class App extends Component {
   render() {
     return (
       <Section title="Please leave feedback">
-        <FeedbackOptions onLeaveFeedback={this.handleFeedback} />
-        <h2
-          style={{
-            marginBottom: 30,
-          }}
-        >
-          Statistics
-        </h2>
+        <FeedbackOptions
+          onLeaveFeedback={this.handleFeedback}
+          options={['good', 'bad', 'neutral']}
+        />
+
+        <h2>Statistics</h2>
 
         {this.countTotalFeedback() === 0 ? (
           <Notification message="There is no feedback" />
