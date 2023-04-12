@@ -12,24 +12,8 @@ class App extends Component {
   };
 
   handleFeedback = e => {
-    switch (e.target.dataset.value) {
-      case 'good':
-        this.setState(prevState => ({
-          good: prevState.good + 1,
-        }));
-        break;
-
-      case 'bad':
-        this.setState(prevState => ({
-          bad: prevState.bad + 1,
-        }));
-        break;
-
-      default:
-        this.setState(prevState => ({
-          neutral: prevState.neutral + 1,
-        }));
-    }
+    const { value } = e.target.dataset;
+    this.setState(prevState => ({ [value]: prevState[value] + 1 }));
   };
 
   countTotalFeedback = () =>
